@@ -1,0 +1,12 @@
+.json-feed a {
+	
+	display: block;
+	text-decoration: none;
+
+}
+
+.json-feed a:hover {
+
+	text-decoration: underline;
+	
+}
