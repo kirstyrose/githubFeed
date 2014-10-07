@@ -32,6 +32,8 @@ $(function(){
 
 					console.log(entry.name);
 
+					$('.json-feed').append('<li>' + entry.name + '</li>');
+
 				}
 
 			}
