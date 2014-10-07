@@ -30,9 +30,9 @@ $(function(){
 
 					var entry = data[i];
 
-					console.log(entry.name);
+					console.log(entry.svn_url);
 
-					$('.json-feed').append('<li>' + entry.name + '</li>');
+					$('.json-feed').append('<a href="' + entry.svn_url + '">' + entry.name + '</a>');
 
 				}
 
