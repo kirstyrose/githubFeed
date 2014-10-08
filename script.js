@@ -34,7 +34,8 @@ $(function(){
 
 					var entryHtml = '<a href="' + entry.owner.html_url + '">' + entry.owner.login + '</a>'
 								  + '<span>/</span>'
-								  + '<a href="' + entry.svn_url + '">' + entry.name + '</a> <br>';
+								  + '<a href="' + entry.svn_url + '">' + entry.name + '</a> <br>'
+								  + '<div>'+ entry.stargazers_count +'</div>';
 
 					$('.json-feed').append(entryHtml);
 
