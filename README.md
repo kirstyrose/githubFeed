@@ -24,7 +24,7 @@ This will pass through to the init function.
 
 =====
 
-This appends thorugh to .json-feed
+This appends through to .json-feed
 
 	$('.json-feed').append(entryHtml);
 

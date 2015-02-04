@@ -1,11 +1,95 @@
-.json-feed a {
+/* ==================================Fonticons======================================== */
+
+@font-face {
+  font-family: 'fonticons';
+  src: url('font/fonticons.eot?28920943');
+  src: url('font/fonticons.eot?28920943#iefix') format('embedded-opentype'),
+       url('font/fonticons.woff?28920943') format('woff'),
+       url('font/fonticons.ttf?28920943') format('truetype'),
+       url('font/fonticons.svg?28920943#fonticons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fonticons';
+    src: url('../font/fonticons.svg?28920943#fonticons') format('svg');
+  }
+}
+*/
+  
+.icon-github-circled-alt2:before { content: '\47'; } /* 'G' */
+.icon-facebook:before { content: '\66'; } /* 'f' */
+.icon-fork:before { content: '\67'; } /* 'g' */
+.icon-play:before { content: '\70'; } /* 'p' */
+.icon-star:before { content: '\73'; } /* 's' */
+.icon-twitter:before { content: '\74'; } /* 't' */
+
+.icon {
+
+    font-family: fonticons;
+    font-size: 8px;
+
+}
+
+.wrap {
+
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 10px 0;
+	overflow: hidden;
+	font-family: calibri;
+	font-size: 13px;
+
+}
+
+.repo {
+	
+	padding: 10px 0;
+	margin: 10px 0;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+
+}
+
+.title a {
+	
+	color: #4183c4;
 	text-decoration: none;
+
 }
 
-.json-feed span {
-	padding: 0 3px 0 5px;
+.desc {
+	
+	float: left;
+	width: 70%;
+	overflow: hidden;
+
 }
 
-.json-feed a:hover {
-	text-decoration: underline;
+.stats {
+	
+	float: right;
+	width: 30%;
+
+}
+
+.stats p {
+
+	float: right;
+	padding-left: 10px;
+	font-size: 10px;
+	color: #ccc;
+
+}
+
+.stats span {
+	
+	padding: 0 5px;
+
 }

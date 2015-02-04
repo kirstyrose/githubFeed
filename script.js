@@ -4,60 +4,69 @@ $(function(){
 
 	function git(name){
 
-		var setup = {
+				var setup = {
 
-			init: function(){
+					init: function(){
 
-				setup.getData('https://api.github.com/users/'+name+'/repos');
+						setup.getData('https://api.github.com/users/'+name+'/repos?sort=updated');
 
-			},
+					},
 
-			getData: function(url){
+					getData: function(url){
 
-				$.ajax({
+						$.ajax({
 
-					url: url,
-					type: 'GET',
-					success: setup.successfulRequest
+							url: url,
+							type: 'GET',
+							success: setup.successfulRequest
 
-				});
+						});
 
-			},
+					},
 
-			successfulRequest: function(data) {
+					successfulRequest: function(data) {
+						var max = 5;
+						var limit = data.length < max ? data.length : max;
 
-				for(var i = 0; i < data.length; i++){
+						for(var i = 0; i < limit; i++){
 
-					var entry = data[i];
+							var entry = data[i];
 
-					console.log(entry.svn_url);
+							console.log(data);
 
-					var entryHtml = '<a href="' + entry.owner.html_url + '">' + entry.owner.login + '</a>'
-								  + '<span>/</span>'
-								  + '<a href="' + entry.svn_url + '">' + entry.name + '</a> <br>'
-								  + '<div>'+ entry.stargazers_count +'</div>'
-								  + '<div>'+ entry.description +'</div>';
+							var html = '<div class="repo">'
+									   + '<div class="desc">'	
+									   + '<p class="title"> <a target="_blank" href="' + entry.owner.html_url + '">' + entry.name + '</a> </p>'
+									   + '<p class="fork">' +  entry.description + '</p>'
+									   + '<p class="status">' +  entry.created_at + '</p>'
+									   + '</div>'
+									   + '<div class="stats">'
+									   + '<p class="forks icon">' + entry.forks_count +'<span>g</span></p>'
+									   + '<p class="stars icon">' + entry.stargazers_count +'<span>s</span></p>'
+									   + '<p class="lang">' + entry.language +'</p>'
+									   + '</div>'
+									   + '</div>';
+									
+							$('.repos').append(html);
 
-					$('.json-feed').append(entryHtml);
+						}
+
+					}
 
 				}
 
+				this.getSexyData = function() {
+
+					setup.getData('https://api.github.com/users/'+name+'/repos');
+
+				}
+
+				setup.init();
+
 			}
 
-		}
+			var gitRequest = new git("kirstyrose");
 
-		this.getSexyData = function() {
-
-			setup.getData('https://api.github.com/users/'+name+'/repos');
-
-		}
-
-		setup.init();
-
-	}
-
-
-	var gitRequest = new git("kirstyr");
-	var gitRequest2 = new git("username");
+		
 
 });
