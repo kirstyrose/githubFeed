@@ -26,5 +26,5 @@ This will pass through to the init function.
 
 This appends through to .repos
 
-	$('.json-feed').append(entryHtml);
+	$('.repos').append(html);
 
