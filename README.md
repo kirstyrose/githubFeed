@@ -28,3 +28,8 @@ This appends through to .repos
 
 	$('.repos').append(html);
 
+=====
+
+Example hosted using Heroku (give it a min to load):
+
+http://github-feed.herokuapp.com/
